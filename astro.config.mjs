@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig, fontProviders } from "astro/config";
 import icon from "astro-icon";
-import vercelAdapter from "@astrojs/vercel";
+import cloudflareAdapter from "@astrojs/cloudflare";
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,5 +17,7 @@ export default defineConfig({
             cssVariable: "--font-inter",
         },
     ],
-    adapter: vercelAdapter(),
+    adapter: cloudflareAdapter({
+        imageService: "passthrough",
+    }),
 });
