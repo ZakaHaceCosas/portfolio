@@ -2,7 +2,7 @@
     "extends": "astro/tsconfigs/strict",
     "compilerOptions": {
         "outDir": "./js",
-        "module": "ESNext",
+        "module": "nodenext",
         "target": "ES6",
         "moduleResolution": "nodenext",
         "strict": true,

@@ -130,6 +130,94 @@ Auto-registro:
 
 <eng>
 
-I haven't ported this page to English yet. Will do soon! You could switch to Spanish, then use your browser's built-in translator, if you're okay with that.
+# What it is and what it does
+
+Kantra is a web application that serves as an ACS; that is, a program to register entries and exits of a building. Kantra is specifically designed for educational use, so it allows, for example, filtering between students, teachers, or center staff. It is also suitable for educational centers since it is totally private, not because I promise it but because user centers must host the software on their own servers (task for which a computer that stays on whenever there is someone inside the center will do; Kantra is not demanding on hardware requirements whatsoever), and anyways requires HTTPS for encryption in transit and a master key used for encryption at rest. Only those who know the key (presumably someone trustworthy within the center) can access the data, or grant authenticated users permission to query it from the app.
+
+<br>
+
+I developed it with a partner[^1].
+
+## The architecture
+
+It is quite simple, and that is intentional. By its nature, Kantra does not expect intensive workloads or concurrency spikes, so we can afford a much flatter design that sacrifices "crumbs" of performance in exchange for much easier and faster development.
+
+<br>
+
+Kantra follows a **client-server-DB** architecture; clients (either the web interface or the command line) communicate via HTTP to a central server (hosted by the center), which does all the complex work and orchestrates a SQLite database that processes all data.
+
+<br>
+
+As I was saying, Kantra will be used in schools to register entries and exits throughout the day (something that, by design, does not include the entry/exit of all students at nine and at three; _only_ everything else), so we don't need more complex things anyway. This will do.
+
+# Development
+
+## The technology stack
+
+There's not too much I can write about.
+
+<br>
+
+**Svelte(Kit) for the graphical interface.** There's not much to explain regarding the decision; Svelte is generally (and that includes my opinion, of course) the best option for almost any web project.
+
+<br>
+
+**Bun for the server.** I chose to use JavaScript on the server side since, with the interface also done in JS, by doing a monorepo all validation and typing logic becomes a third shared repository between both, eliminating duplication and discrepancies (things that in the past gave quite a bit of trouble, for how distracted we both are…)
+
+<br>
+
+**C# for the command line.** Yes, there is a _CLI_! The "`kantractl`", mainly used as an installation and program update manager, although in the future we foresee allowing its use to interact with the whole software from the terminal. I chose C# for being a quite enjoyable language and for .NET, which makes it very easy to plug in a kit like Avalonia to give the installer/updater a graphical interface in the future (or even port Kantra from web to native to reduce hardware requirements, who knows).
+
+## Distribution model
+
+The idea is very simple: you download the `kantractl` program, and it explains step by step what things to do on your computer or network (if you have to open ports, install certificates or whatever), then it takes care of installing dependencies (Bun, basically), downloading the latest version of Kantra, generating and exporting local HTTPS certificates, and starting the server.
+
+<br>
+
+About whether I should do everything directly on the machine or install a containerization solution and put Kantra in a container, that's something we still debate, but for now it does everything directly on the machine.
+
+# Features
+
+- Registration of entries, exits, and pick-ups of children
+    - Differentiates teachers, students, workers, or visitors (plus "others")
+    - Grouping by doors
+    - Registers companions or children
+    - Offers receipt to print (Zebra and PDF formats)
+    - Offers badge to print on paper (PDF format)
+    - Allows adding additional notes if something happens to clarify it
+    - Once an entry is registered, with one click it auto-registers the exit of whoever entered at the current time (or another to specify)
+- Interactive registration where the person themselves enters the data
+    - Shows privacy indications (G.D.P.R.) and evacuation plan (to be determined by the center)
+    - Said interface is customizable with colors and center logo
+- Visualization of data, grouped by date
+- Interface to filter data in multiple ways (by author type, by ID number)
+- Report generation (PDF format) with all movements associated with one or several people
+- Prevention of deletion of data less than 5 years old (required by law)
+
+# Availability
+
+Kantra is not available yet.
+
+<br>
+
+We are developing it between two people[^1] as an additional school project; it will initially be tested in our center and if it proves functional (which it should) it will launch as a product with general availability, at which point I will update this section.
+
+# Screenshots
+
+Home page with data:
+
+<img src="/screens/kantra_1.png" alt="Screenshot 1" class="proj-d-png" />
+
+Register entry from reception:
+
+<img src="/screens/kantra_2.png" alt="Screenshot 2" class="proj-d-png" />
+
+Self-registration:
+
+<img src="/screens/kantra_3.png" alt="Screenshot 3" class="proj-d-png" />
+
+(It should be clarified that these are old ones; not too long ago we started re-designing Kantra using our own design instead of Microsoft Fluent 2; I will update the screenshots as soon as it is finished)
+
+[^1]: Credits to my partner [Mario](https://mariomadorran-portfolio.vercel.app/) for contributing much of the project development.
 
 </eng>

@@ -18,6 +18,7 @@ export default defineConfig({
         },
     ],
     adapter: cloudflareAdapter({
+      prerenderEnvironment: 'node',
         imageService: "passthrough",
     }),
 });
