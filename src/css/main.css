@@ -396,6 +396,10 @@ button:hover {
     background-color: #cb383790;
     border: 2px solid #cb3837;
 }
+.box-jsr:hover {
+    background-color: #d3c26c90;
+    border: 2px solid #192e39;
+}
 .box-x:hover {
     background-color: #03a9f490;
     border: 2px solid #03a9f4;
@@ -562,5 +566,5 @@ button:hover {
 }
 
 .toc1 {
-   min-width: 300px;
+    min-width: 300px;
 }

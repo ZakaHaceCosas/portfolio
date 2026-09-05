@@ -1,0 +1,301 @@
+---
+import ZakaBox from "../components/ZakaBox.astro";
+---
+
+<h2>
+   <esp>Algunas cosas que hago</esp>
+   <eng>Some stuff I make</eng>
+</h2>
+
+   <h3>
+       <esp>He creado estos proyectos</esp>
+       <eng>I've created these projects</eng>
+   </h3>
+
+<div class="bento">
+   <ZakaBox
+       url="https://me.zhc.es/projects/kantra"
+       name="Kantra"
+       boxIcon={{
+           type: "svg",
+           name: "kantera",
+       }}
+       boxClass="box-kantera"
+       label={{
+           esp: "App web, hecho con Svelte y Bun",
+           eng: "Web app, made with Svelte and Bun",
+       }}
+       desc={{
+           esp: "Sistema de Acceso Controlado para instituciones educativas.",
+           eng: "Access Control System for learning institutions.",
+       }}
+   />
+   <ZakaBox
+       url="https://fuckingnode.github.io/"
+       name="FKN"
+       boxIcon={{
+           type: "svg",
+           name: "nodular",
+       }}
+       boxClass="box-nodular"
+       label={{
+           esp: "Herramienta de terminal, hecha con Deno",
+           eng: "CLI tool, made with Deno",
+       }}
+       desc={{
+           esp: "CLI de automatización para desarrolladores de NodeJS (y otros stacks). Bastante potente.",
+           eng: "Automation CLI for NodeJS (and other stacks) developers. Fairly powerful.",
+       }}
+   />
+</div>
+<p>
+   <esp>También hay cosas más pequeñas, como paquetes</esp>
+   <eng>There's also smaller things, like packages</eng>
+</p>
+<div class="bento">
+   <ZakaBox
+       url="https://github.com/ZakaHaceCosas/dev-utils"
+       name="dev-utils"
+       boxClass="box-npm"
+       boxIcon={{
+           type: "svg",
+           name: "npm",
+       }}
+       label={{
+           esp: "jsr y npm",
+           eng: "jsr and npm",
+       }}
+       desc={{
+           esp: "Varios paquetes de JavaScript de utilidad (para cadenas, números y demás).",
+           eng: "A bunch of JavaScript utility packages (for strings, numbers and more).",
+       }}
+   />
+   <ZakaBox
+       url="https://jsr.io/@subetedesu/honlvlimport"
+       name="@subetedesu/honlvlimport"
+       boxClass="box-jsr"
+       boxIcon={{
+           type: "svg",
+           name: "jsr",
+       }}
+       label={{
+           esp: "jsr",
+           eng: "jsr",
+       }}
+       desc={{
+           esp: "Paquete para importar datos de nivelación de diversos bots de Discord.",
+           eng: "Package to import leveling data from several Discord bots.",
+       }}
+   />
+</div>
+<p>
+   <esp>También me gusta dar clase, ¿lo sabías?</esp>
+   <eng>I also enjoy teaching, did you know that?</eng>
+</p>
+<div class="bento">
+   <ZakaBox
+       url="https://profe.zhc.es/"
+       name="@ZakaProfe"
+       boxClass="box-profe"
+       label={{
+           esp: "Videos en YouTube.",
+           eng: "YouTube videos.",
+       }}
+       desc={{
+           esp: "Hago videos didácticos de carácter general.",
+           eng: "I make educational videos about general topics.",
+       }}
+   />
+   <ZakaBox
+       url="https://teka.zhc.es/"
+       name="@ZakaTeka"
+       boxClass="box-profe"
+       label={{
+           esp: "Videos en YouTube.",
+           eng: "YouTube videos.",
+       }}
+       desc={{
+           esp: "También hago videos más centrados en informática.",
+           eng: "I also make videos more focused on informatics.",
+       }}
+   />
+</div>
+<div>
+   <h3>
+       <esp>Proyectos no mantenidos</esp>
+       <eng>Unmaintained projects</eng>
+   </h3>
+   <p>
+       <esp
+           >Luego están las cosas que ya no tengo tiempo de mantener, al menos por ahora. No son geniales, pero algo demuestran. Que las retome a futuro es posible pero no prometido. Algunos están bajo organizaciones en vez de bajo mi perfil personal, pero todos me acreditan
+           debidamente como creador.</esp
+       >
+       <eng
+           >Then you've got the things I no longer have time to maintain, at least for now. They're not great, but something they showcase. Whether I retake them on the future is possible but not promised. some are under organizations instead of my personal profile, but they all properly credit me as creator</eng
+       >
+   </p>
+</div>
+<div class="bento">
+   <ZakaBox
+       url="https://konbini.vercel.app/"
+       name="Konbini"
+       boxIcon={{
+           type: "svg",
+           name: "kbi",
+       }}
+       boxClass="box-kbi"
+       label={{
+           esp: "Herramienta de terminal, hecha con Bun + Web app, hecha con Preact",
+           eng: "CLI tool, made with Bun + Web app, made with Preact",
+       }}
+       desc={{
+           esp: "Cliente universal para la mayoría de gestores de paquetes.",
+           eng: "Universal client for the majority of package managers.",
+       }}
+   />
+   <ZakaBox
+       url="https://github.com/HanaOrg/Zaiko"
+       name="Zaiko"
+       boxIcon={{
+           type: "svg",
+           name: "ovs",
+       }}
+       boxClass="box-ovs"
+       label={{
+           esp: "App de escritorio, hecha con Tauri y Bun",
+           eng: "Desktop app, made with Tauri and Bun",
+       }}
+       desc={{
+           esp: "Programa de escritorio simple para gestión de inventario.",
+           eng: "Simple desktop program for stock management.",
+       }}
+   />
+   <ZakaBox
+       url="https://personaplus.zhc.es/"
+       name="PersonaPlus"
+       boxIcon={{
+           type: "svg",
+           name: "exponential",
+       }}
+       boxClass="box-exponential"
+       label={{
+           esp: "App de Android, hecha con React Native",
+           eng: "Android app, made with React Native",
+       }}
+       desc={{
+           esp: "Pequeña app de salud que nunca acabé.",
+           eng: "Small health app I never finished.",
+       }}
+   />
+</div>
+<h3>
+   <esp>Trabajo con</esp>
+   <eng>I work with</eng>
+</h3>
+<div class="bento">
+   <ZakaBox
+       url="https://sokora.org/"
+       name="Sokora"
+       boxIcon={{
+           type: "image",
+           name: "sokoballs",
+       }}
+       boxClass="box-neboola"
+       label={{
+           esp: "Ejerciendo de diseñador líder + programador del bot (TypeScript) + programador web (Svelte)",
+           eng: "Working as lead designer + bot developer (TypeScript) + web developer (Svelte)",
+       }}
+       desc={{
+           esp: "Un bot de Discord bastante completo.",
+           eng: "A very complete Discord bot.",
+       }}
+   />
+   <ZakaBox
+       url="https://shard.es/"
+       name="Shard"
+       boxClass="box-hokkas"
+       label={{
+           esp: "Ejerciendo de investigador de I+D",
+           eng: "Working as R&D researcher",
+       }}
+       desc={{
+           esp: "Grupo de herramientas con las que sacamos a la IA el mayor provecho posible.",
+           eng: "Set of tools with which we create as much value with AI as possible.",
+       }}
+   />
+</div>
+
+<h3>
+   <esp>He contribuido a</esp>
+   <eng>I've contributed to</eng>
+</h3>
+<div class="bento">
+   <ZakaBox
+       url="https://codeberg.org/NotabenaDesu/Notabena"
+       name="Notabena"
+       boxIcon={{
+           type: "image",
+           name: "notabean",
+       }}
+       boxClass="box-beans"
+       label={{
+           eng: "Contributed as developer (Golang)",
+           esp: "Contribuí como desarrollador (Golang)",
+       }}
+       desc={{
+           eng: "A simple and great note-taking app.",
+           esp: "Una app de notas simple y genial.",
+       }}
+   />
+   <!-- it's been so long and it's so dead... <ZakaBox
+       url="https://github.com/Avdan-OS/"
+       name="AvdanOS"
+       boxIcon={{
+           type: "image",
+           name: "bread",
+       }}
+       boxClass="box-bread"
+       label={{
+           esp: "Contribuí como diseñador",
+           eng: "Contributed as designer",
+       }}
+       desc={{
+           esp: "Una distro Linux.",
+           eng: "A Linux distro.",
+       }}
+   /> -->
+   <!-- they don't accept the god damn PR <ZakaBox
+       url="https://github.com/Amog-OS/"
+       name="AmogOS"
+       boxIcon={{
+           type: "image",
+           name: "sus",
+       }}
+       boxClass="box-sus"
+       label={{
+           esp: "Contribuí como programador web",
+           eng: "Contributed as website developer",
+       }}
+       desc={{
+           esp: "Sí, esto es real.",
+           eng: "Yes, this is real.",
+       }}
+   />-->
+   <ZakaBox
+       url="https://vuelto.pp.ua/"
+       name="Vuelto"
+       boxIcon={{
+           type: "image",
+           name: "vuelta",
+       }}
+       boxClass="box-vuelta"
+       label={{
+           esp: "Contribuí como diseñador y redactor de contenidos",
+           eng: "Contributed as designer and copywriter",
+       }}
+       desc={{
+           esp: "Un motor de juegos en Golang (deprecado)",
+           eng: "A game engine in Golang (deprecated)",
+       }}
+   />
+</div>

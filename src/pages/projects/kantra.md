@@ -14,24 +14,38 @@ chapters:
     - depth: 2
       titleES: "La arquitectura"
       hrefES: "la-arquitectura"
+      titleEN: "The architecture"
+      hrefEN: "the-architecture"
     - depth: 1
       titleES: "Desarrollo"
       hrefES: "desarrollo"
+      titleEN: "Development"
+      hrefEN: "development"
     - depth: 2
       titleES: "La pila tecnológica"
       hrefES: "la-pila-tecnológica"
+      titleEN: "Tech stack"
+      hrefEN: "the-technology-stack"
     - depth: 2
       titleES: "Modelo de distribución"
       hrefES: "modelo-de-distribución"
+      titleEN: "distribution-model"
+      hrefEN: "distribution-model"
     - depth: 1
       titleES: "Funcionalidades"
       hrefES: "funcionalidades"
+      titleEN: "Features"
+      hrefEN: "features"
     - depth: 1
       titleES: "Disponibilidad"
       hrefES: "disponibilidad"
+      titleEN: "Availability"
+      hrefEN: "availability"
     - depth: 1
       titleES: "Capturas de pantalla"
       hrefES: "capturas-de-pantalla"
+      titleEN: "Screenshots"
+      hrefEN: "screenshots"
 ---
 
 <esp>
@@ -123,8 +137,6 @@ Auto-registro:
 <img src="/screens/kantra_3.png" alt="Captura 3" class="proj-d-png" />
 
 (Cabe aclarar que estas son viejas, hace no demasiado que empezamos a re-diseñar Kantra usando un diseño propio en vez de Microsoft Fluent 2; actualizaré las capturas en cuanto esté terminado)
-
-[^1]: Créditos a mi compañero [Mario](https://mariomadorran-portfolio.vercel.app/) por aportar gran parte del desarrollo del proyecto.
 
 </esp>
 
@@ -218,6 +230,7 @@ Self-registration:
 
 (It should be clarified that these are old ones; not too long ago we started re-designing Kantra using our own design instead of Microsoft Fluent 2; I will update the screenshots as soon as it is finished)
 
-[^1]: Credits to my partner [Mario](https://mariomadorran-portfolio.vercel.app/) for contributing much of the project development.
-
 </eng>
+
+[^1]:
+    <p><esp>Créditos a mi compañero <a href="https://mariomadorran-portfolio.vercel.app/" target="_blank">Mario</a> por aportar gran parte del desarrollo del proyecto.</esp><eng>Credits to my partner <a href="https://mariomadorran-portfolio.vercel.app/" target="_blank">Mario</a> for contributing much of the project development.</eng></p>

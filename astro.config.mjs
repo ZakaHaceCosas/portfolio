@@ -17,8 +17,13 @@ export default defineConfig({
             cssVariable: "--font-inter",
         },
     ],
+    vite: {
+        optimizeDeps: {
+            include: ["astro/assets/services/noop", "astro/logger/json"],
+        },
+    },
     adapter: cloudflareAdapter({
-      prerenderEnvironment: 'node',
+        prerenderEnvironment: "node",
         imageService: "passthrough",
     }),
 });
