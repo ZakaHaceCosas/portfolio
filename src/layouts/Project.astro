@@ -1,9 +1,16 @@
 ---
+import HeadProvider from "../components/HeadProvider.astro";
 import ToC from "../components/ToC.astro";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 ---
+
+<HeadProvider
+    title={frontmatter.titleES}
+    description={frontmatter.description}
+    banner_url={`https://me.zhc.es/covers/${frontmatter.id}.png`}
+/>
 
 <Layout>
     <h1 class="animation">
@@ -12,16 +19,17 @@ const { frontmatter } = Astro.props;
         >\<esp>{frontmatter.titleES}</esp><eng>{frontmatter.titleEN}</eng>
     </h1>
     <hr />
-        <div  style="display: flex; flex-direction: row; gap: 12px;">
+        <div style="display: flex; flex-direction: row; gap: 12px;">
             <ToC chapters={frontmatter.chapters} />
-            <div style="display: flex; flex-direction: column; gap: 6px; ">
+            <div style="display: flex; flex-direction: column; gap: 12px; ">
                 <div style="display: flex; flex-direction: row; gap: 12px; ">
-                    <img style="max-width: 700px; border-radius: 6px;" class="animation" src={`/covers/${frontmatter.id}.png`} alt="Project cover" style="width: 100%;" />
+                    <img style="max-width: 500px; border-radius: 6px;" class="animation" src={`/covers/${frontmatter.id}.png`} alt="Project cover" style="width: 100%;" />
                     <p  class="animation"><em style="font-size: xx-large">
                         <esp>{frontmatter.descriptionES}</esp><eng>{frontmatter.descriptionEN}</eng>
-                    </em><br/>&mdash; <esp>Proyecto de ZakaHaceCosas</esp><eng>ZakaHaceCosas’ project</eng></p>
+                    </em><br/>&mdash; <esp>Descripción del proyecto</esp><eng>Project page</eng></p>
                 </div>
-                <slot  />
+                <hr style="height: 2px; background-color: #00000020;" class="animation" />
+                <div style="max-width:1000px;"><slot  /></div>
             </div>
         </div>
 </Layout>

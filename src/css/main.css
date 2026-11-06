@@ -566,5 +566,8 @@ button:hover {
 }
 
 .toc1 {
+    position: sticky;
+    top: 12px;
+    height: fit-content;
     min-width: 300px;
 }

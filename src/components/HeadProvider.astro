@@ -1,0 +1,198 @@
+---
+import { Font } from "astro:assets";
+
+interface Props {
+  title?: string;
+  description?:string;
+  banner_url?:string;
+}
+
+const { title = "ZakaHaceCosas™",
+  description = "Hello, I am Zaka, a UI designer and web developer, and this is my portfolio site, where you can find all my work as well as any other useful information. :)",
+  banner_url="https://me.zhc.es/design/zakabanner_bgd.avif"} = Astro.props;
+---
+
+    <head>
+        <script is:inline src="https://analytics.ahrefs.com/analytics.js" data-key="2rKWEkN5eNPX6mOP8+vcqA" async></script>
+        <!-- ^ analytics -->
+        <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+        <script type="application/ld+json">
+        {
+          // TODO
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "name": "Zaka’s portfolio",
+          "url": "https://me.zhc.es",
+          "description": "Hello, I am Zaka, a UI designer and web developer, and this is my portfolio site, where you can find all my work as well as any other useful information.",
+          "author": {
+            "@type": "Person",
+            "name": "Zakaria B.",
+            "url": "https://me.zhc.es",
+            "sameAs": [
+              "https://twitter.com/zakahacecosas",
+              "https://x.com/zakahacecosas",
+              "https://linkedin.com/in/zakahacecosas",
+              "https://discord.com/users/1136046074700771400/",
+              "https://github.com/ZakaHaceCosas/",
+              "https://gitlab.com/zakahacecosas",
+              "https://codeberg.org/zakahacecosas",
+              "https://bsky.app/profile/zakahacecosas.bsky.social"
+            ]
+          },
+          "about": {
+            "@type": "CreativeWorkSeries",
+            "name": "Proyectos",
+            "hasPart": [
+              {
+                "@type": "CreativeWork",
+                "name": "Sokora",
+                "url": "https://me.zhc.es/projects/sokora",
+                "description": "Development of a multipurpose Discord bot.",
+                "image": "https://me.zhc.es/covers/sokora.png"
+              }
+            ]
+          }
+        }
+</script>
+
+        <!--begin basics-->
+        <title>{title}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!--end basics-->
+
+        <Font cssVariable="--font-inter" />
+
+        <!--begin icons-->
+        <link rel="apple-touch-icon" href="https://me.zhc.es/design/icn_c.avif" />
+        <link rel="icon" href="https://me.zhc.es/design/icn_c.avif" type="image/avif" />
+        <!--end icons-->
+
+        <!--begin meta-->
+        <!--basic-->
+        <meta name="title" content={title} />
+        <meta name="description" content={description} />
+        <meta name="author" content="ZakaHaceCosas" />
+        <meta name="robots" content="index, follow" />
+        <!--open graph-->
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="ZakaHaceCosas\Portfolio" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content={banner_url} />
+        <!--twitter-->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={title}/>
+        <meta name="twitter:description" content={description}/>
+        <meta name="twitter:image" content={banner_url}/>
+        <!--extra stuff-->
+        <meta name="theme-color" content="#19FF73" />
+        <meta name="keywords" content="Zaka, ZakaHaceCosas, portfolio, developer" />
+        <!--end meta-->
+
+        <script>
+            /* LANGS */
+            enum Languages {
+                English = "en",
+                Spanish = "es",
+            }
+
+            function setLang(lang: Languages) {
+                if (lang !== Languages.English && lang !== Languages.Spanish) {
+                    throw new Error("Why are you trying to set the language to something that isn't 'en' or 'es'?");
+                }
+
+                const expirationDate = new Date();
+                expirationDate.setDate(expirationDate.getDate() + 365);
+                try {
+                    localStorage.setItem("selectedLang", lang);
+                    localStorage.setItem("langExpiration", expirationDate.toISOString());
+                } catch (e) {
+                    console.error("Error accessing localStorage", e);
+                }
+                document.documentElement.setAttribute("lang", lang);
+            }
+
+            document.addEventListener("DOMContentLoaded", function () {
+                function testLang(test: string): Languages {
+                    return /^es/i.test(test) ? Languages.Spanish : Languages.English;
+                }
+
+                try {
+                    const selectedLang = localStorage.getItem("selectedLang");
+                    const langExpiration = localStorage.getItem("langExpiration");
+
+                    const isInvalidLang = selectedLang !== Languages.English && selectedLang !== Languages.Spanish;
+
+                    if (selectedLang && langExpiration) {
+                        const expirationDate = new Date(langExpiration);
+                        if (!isNaN(expirationDate.getTime()) && expirationDate > new Date()) {
+                            if (isInvalidLang) {
+                                localStorage.removeItem("selectedLang");
+                                localStorage.removeItem("langExpiration");
+                                setLang(testLang(navigator.language));
+                            } else {
+                                setLang(selectedLang as Languages);
+                            }
+                        } else {
+                            localStorage.removeItem("selectedLang");
+                            localStorage.removeItem("langExpiration");
+                            setLang(testLang(navigator.language));
+                        }
+                    } else {
+                        setLang(testLang(navigator.language));
+                    }
+                } catch (e) {
+                    console.error("Error accessing localStorage", e);
+                    setLang(testLang(navigator.language));
+                }
+
+                const switchToEnglish: HTMLElement | null = document.getElementById("setLangEn");
+                const switchToSpanish: HTMLElement | null = document.getElementById("setLangEs");
+
+                if (!switchToEnglish || !switchToSpanish) {
+                    console.error("Either 'setLangEn' or 'setLangEs' is missing. Check your code.");
+                    throw new Error("Either 'setLangEn' or 'setLangEs' is missing. Check your code.");
+                }
+
+                switchToEnglish.addEventListener("click", function () {
+                    setLang(Languages.English);
+                });
+
+                switchToSpanish.addEventListener("click", function () {
+                    setLang(Languages.Spanish);
+                });
+            });
+
+            /* AOS */
+            // animate on scroll with intersection observer API
+            // if for some reason you're inspecting this, feel free to copy it lol
+            const thingsToAnimate: NodeListOf<HTMLElement> = document.querySelectorAll<HTMLElement>(".animation");
+
+            let counter = 0;
+
+            const observerCallback = (entries: IntersectionObserverEntry[]): void => {
+                entries.forEach((entry: IntersectionObserverEntry) => {
+                    const targetElement = entry.target as HTMLElement;
+
+                    if (entry.isIntersecting) {
+                        counter++;
+                        setTimeout(() => {
+                            targetElement.classList.add("scroll-animation");
+                        }, counter * 250);
+
+                        observer.unobserve(targetElement); // animate once
+                        setTimeout(() => {
+                            counter--;
+                        }, 30);
+                    }
+                });
+            };
+
+            const observer: IntersectionObserver = new IntersectionObserver(observerCallback, { threshold: 0.5 });
+
+            thingsToAnimate.forEach((element: Element) => {
+                observer.observe(element);
+            });
+        </script>
+    </head>

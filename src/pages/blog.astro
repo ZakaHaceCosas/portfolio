@@ -1,8 +1,11 @@
 ---
+import HeadProvider from "../components/HeadProvider.astro";
 import Layout from "../layouts/Layout.astro";
 // @ts-ignore
 const allPosts = Object.values(import.meta.glob("./posts/*.md", { eager: true }));
 ---
+
+<HeadProvider />
 
 <Layout>
     <h1 class="animation"><span style="font-weight: 400;"><a href="/">Zaka</a>\</span>Blog</h1>

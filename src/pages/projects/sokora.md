@@ -171,9 +171,11 @@ Moderación > Registros de mensajería
 <img src="/screens/sokora_bot_6.png" alt="Captura bot 6" class="proj-d-png" />
 
 Noticias > Publicación
+
 <img src="/screens/sokora_bot_7.png" alt="Captura bot 7" class="proj-d-png" />
 
 Noticias > Resultado de publicación
+
 <img src="/screens/sokora_bot_8.png" alt="Captura bot 8" class="proj-d-png" />
 
 Noticias > Viendo una noticia desde otro sitio

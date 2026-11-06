@@ -1,8 +1,14 @@
 ---
+import HeadProvider from "../components/HeadProvider.astro";
 import Layout from "./Layout.astro";
 
 const { frontmatter } = Astro.props;
 ---
+
+<HeadProvider
+    title={frontmatter.titleES}
+    description={frontmatter.description}
+/>
 
 <Layout>
     <h1 class="animation">
