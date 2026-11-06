@@ -5,11 +5,15 @@ interface Props {
   title?: string;
   description?:string;
   banner_url?:string;
+  color?:string;
 }
 
-const { title = "ZakaHaceCosas™",
+const {
+  title = "ZakaHaceCosas™",
   description = "Hello, I am Zaka, a UI designer and web developer, and this is my portfolio site, where you can find all my work as well as any other useful information. :)",
-  banner_url="https://me.zhc.es/design/zakabanner_bgd.avif"} = Astro.props;
+  banner_url="https://me.zhc.es/design/zakabanner_bgd.avif",
+  color = "#19FF73"
+} = Astro.props;
 ---
 
     <head>
@@ -86,7 +90,7 @@ const { title = "ZakaHaceCosas™",
         <meta name="twitter:description" content={description}/>
         <meta name="twitter:image" content={banner_url}/>
         <!--extra stuff-->
-        <meta name="theme-color" content="#19FF73" />
+        <meta name="theme-color" content={color} />
         <meta name="keywords" content="Zaka, ZakaHaceCosas, portfolio, developer" />
         <!--end meta-->
 

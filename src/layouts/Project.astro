@@ -3,13 +3,26 @@ import HeadProvider from "../components/HeadProvider.astro";
 import ToC from "../components/ToC.astro";
 import Layout from "./Layout.astro";
 
-const { frontmatter } = Astro.props;
+interface Props {
+  frontmatter: Record<`${"title"|"description"}${"ES"|"EN"}`|"color"|"id", string> & {
+    chapters:{
+        depth: number;
+        titleES: string;
+        hrefES: string;
+        titleEN: string;
+        hrefEN: string;
+    }[]
+  }
+}
+
+const { frontmatter }: Props = Astro.props;
 ---
 
 <HeadProvider
     title={frontmatter.titleES}
-    description={frontmatter.description}
+    description={frontmatter.descriptionES}
     banner_url={`https://me.zhc.es/covers/${frontmatter.id}.png`}
+    color={frontmatter.color}
 />
 
 <Layout>

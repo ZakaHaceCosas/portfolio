@@ -5,6 +5,7 @@ titleEN: Kantra
 id: kantra
 descriptionES: "«Controla quién entra» - Sistema de Acceso Controlado local, basado en la web."
 descriptionEN: '"Control who enters" - Self-hosted Access Control System, based on the web.'
+color: "#C55FFF"
 chapters:
     - depth: 1
       titleES: "Qué es y qué hace"
